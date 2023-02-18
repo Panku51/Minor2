@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.tooltip {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: antiquewhite;
+    padding: 10px;
+    position: relative;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition-duration: 0.4s;
+    transition-property: opacity, transform;
+}
+
+.tooltip::after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 90%;
+    left: 50%;
+    transform: rotateZ(45deg) translateX(-50%);
+    z-index: -1;
+}
+
+.hide {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0px);
+}
